@@ -8,14 +8,16 @@ public class TestStudentRepository {
 		
 		StudentRepository repo = new StudentRepository();
 		
+		//get student by roll number
 		Student retrivedStd = repo.getStudentByRoll(30);
 		System.out.println(retrivedStd);
 		
+		//get all students
 		List<Student> stdList = repo.getAllStudents();
 		System.out.println(">>>>>>std list >>>>>>>>"+stdList);
 		
-		
-		Student std = new Student(50, "ZZZ", "Dubai");
+		//insert new student
+		Student std = new Student(60, "yyy", "Kashi");
 		boolean res = repo.addNewStudent(std);
 		System.out.println("Student added ::: "+res);
 		
