@@ -109,15 +109,22 @@ public class StudentRepository {
 			Connection con = MyConection.getConnection();
 			stmt = con.createStatement();
 
-			System.out.println("INSERT QUERY :::  " + "insert into student values (" + std.getRoll() + ","+"\'"
-					+ std.getName()+"\'" + ","+"\'" + std.getAddress() +"\'" +")");
-
 			res = stmt.execute("insert into student values (" + std.getRoll() + ","+"\'"
 					+ std.getName()+"\'" + ","+"\'" + std.getAddress() +"\'" +")");
 
 		} catch (Exception e) {
 			System.out.println("error while inserting the record");
 			e.printStackTrace();
+		}
+		finally {
+			
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			MyConection.closeConnection();
 		}
 
 		return res;
