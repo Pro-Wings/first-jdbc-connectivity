@@ -218,6 +218,7 @@ public class StudentRepository {
 	}
 
 	
+	// stored procedure execution using callable statement example
 	public void testCallableStmt()
 	{
 		CallableStatement stmt = null;
